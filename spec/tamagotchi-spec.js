@@ -31,4 +31,14 @@ describe("Tama", function() {
     jasmine.clock().tick(30001)
     expect(tammy.exhaustion).toBe(95)
   });
+
+
+
+
+
+
+
+
+
+
 });

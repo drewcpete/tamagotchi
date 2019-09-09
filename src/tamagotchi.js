@@ -1,28 +1,42 @@
 export class Tama {
   constructor() {
-    this.hunger = 100;
-    this.happiness = 100;
-    this.exhaustion = 100;
-    this.timer();
+    this.hunger = 300;
+    this.happiness = 500;
+    this.exhaustion = 540;
+    this.timer()
   }
   timer() {
-    setInterval( () => {
+    setInterval(() => {
+      if (this.hunger < 0 | this.happiness < 0 | this.exhaustion < 0) {
+        alert("God damn you're a stupid son of a bitch.  You let your fucking creature die!" + this.hunger + " " + this.happiness + " " + this.exhaustion)
+      }
       this.hunger = this.hunger - 5;
       this.happiness = this.happiness - 5;
       this.exhaustion = this.exhaustion - 5
-    }, 30000)
-    if (this.hunger <= 5) {
-      alert("God damn you're a fucking idiot.  You let your Tamagotchi die of starvation!")
-    }
-    if (this.happiness <= 5) {
-      alert("You let something get so sad that it died? You're going to hell.")
-    }
-    if (this.exhaustion <= 5) {
-      alert("So tired that it died of exhuastion? I hope it was worth it.")
-    }
+    }, 3000)
+    return this;
   }
 
-  dead() {
+  feed() {
+    if (this.hunger < 300) {
+      this.hunger += 10;
+    }
+    return this;
+  }
+
+  love() {
+    if (this.happiness < 500) {
+      this.happiness += 10;
+    }
+    return this;
+  }
+
+  sleep() {
+    setTimeout(() => {
+      if (this.exhaustion < 500) {
+        this.exhaustion = 540;
+      }
+    }, 60000);
 
   }
 }
