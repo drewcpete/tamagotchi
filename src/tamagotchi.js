@@ -21,4 +21,8 @@ export class Tama {
       alert("So tired that it died of exhuastion? I hope it was worth it.")
     }
   }
+
+  dead() {
+
+  }
 }
